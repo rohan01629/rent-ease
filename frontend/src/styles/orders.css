@@ -1,0 +1,26 @@
+.table {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .badge {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  
+  .bg-warning {
+    background-color: #ffc107 !important;
+    color: black;
+  }
+  
+  .bg-success {
+    background-color: #28a745 !important;
+    color: white;
+  }
+  

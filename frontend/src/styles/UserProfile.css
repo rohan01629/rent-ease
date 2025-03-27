@@ -1,0 +1,134 @@
+/* Profile Container */
+.profile-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Profile Card */
+  .profile-card {
+    padding: 20px;
+  }
+  
+  .profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .profile-card h2 {
+    font-size: 22px;
+    color: #333;
+  }
+  
+  .profile-card p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Earnings & Expenses */
+  .stats-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .stats-card {
+    flex: 1;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
+    margin: 5px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stats-card h3 {
+    margin: 5px 0;
+    font-size: 18px;
+  }
+  
+  .stats-card p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .earnings {
+    background: #d4edda;
+    color: #155724;
+  }
+  
+  .expenses {
+    background: #f8d7da;
+    color: #721c24;
+  }
+  
+  .icon {
+    font-size: 24px;
+  }
+  
+  /* Rental History */
+  .history-container {
+    margin-top: 20px;
+  }
+  
+  .history-container h3 {
+    font-size: 18px;
+    color: #333;
+    text-align: left;
+  }
+  
+  .history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .history-table th, .history-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .history-table th {
+    background: #007bff;
+    color: white;
+  }
+  
+  .text-green {
+    color: green;
+  }
+  
+  .text-red {
+    color: red;
+  }
+  
+  /* Logout Button */
+  .logout-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .logout-btn:hover {
+    background: #c82333;
+  }
+  
+  .logout-icon {
+    margin-right: 8px;
+  }
+  

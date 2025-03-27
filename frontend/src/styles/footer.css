@@ -1,0 +1,33 @@
+/* Footer Background (Same as Navbar) */
+.custom-footer {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.1rem;
+  }
+  
+  /* Footer Content */
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Footer Links */
+  .footer-links {
+    margin-top: 10px;
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+  }
+  
+  .footer-links a:hover {
+    color: #ffdd57;
+    text-decoration: underline;
+  }
+  

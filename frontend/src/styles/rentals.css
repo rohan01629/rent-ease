@@ -1,0 +1,143 @@
+/* General Layout */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Rentals Heading */
+.rentals-heading {
+  font-size: 30px;
+  font-weight: 600;
+  color: #333; /* Dark Grey */
+  text-align: center;
+  text-transform: uppercase;
+  padding: 15px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef); /* Light Gradient */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Styling */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff; /* Light Background */
+  border: 1px solid #ddd; /* Soft Border */
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Image */
+.card-img-top {
+  width: 100%;
+  height: 150px; /* Fixed height for uniformity */
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Card Body */
+.card-body {
+  padding: 20px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* Title & Description */
+.card-title {
+  font-weight: 600;
+  font-size: 20px;
+  color: #222; /* Darker for readability */
+}
+
+.card-text {
+  font-size: 14px;
+  color: #555; /* Medium Grey */
+}
+
+/* Select Dropdowns */
+.select-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+select {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  background: #f8f9fa; /* Light Background */
+  color: #333;
+}
+
+select:hover {
+  border-color: #007bff;
+}
+
+/* Price Section */
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #007bff; /* Blue Accent */
+  margin: 15px 0;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.button-group button {
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* Responsive Grid */
+@media (max-width: 992px) {
+  .col-md-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

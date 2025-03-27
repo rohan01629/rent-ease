@@ -1,0 +1,74 @@
+/* Login Page Background */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+  }
+  
+  /* Login Card */
+  .login-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+  }
+  
+  /* Title */
+  .login-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  /* Input Fields */
+  .input-group {
+    margin-bottom: 1rem;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  /* Login Button */
+  .login-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 6px;
+    background-color: #6e8efb;
+    border: none;
+    color: white;
+    transition: 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #5a7bf9;
+    transform: scale(1.05);
+  }
+  
+  /* Signup Link */
+  .signup-link {
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .signup-btn-link {
+    color: #6e8efb;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .signup-btn-link:hover {
+    text-decoration: underline;
+  }
+  
