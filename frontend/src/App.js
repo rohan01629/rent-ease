@@ -8,6 +8,7 @@ import AboutUs from "./Pages/aboutUs";
 import ContactUs from "./Pages/contactUs";
 import Rentals from "./Pages/rentals";
 import UserProfile from "./components/UserProfile";
+import RentalHistory from "./Pages/RentalHistory";
 
 function App() {
   // ✅ Retrieve token from localStorage on load
@@ -87,6 +88,7 @@ function App() {
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/rentals" element={<Rentals />} />
+        <Route path="/rental-history" element={<RentalHistory />} />
         <Route path="/profile" element={<UserProfile authToken={authToken} />} />
       </Routes>
     </Router>

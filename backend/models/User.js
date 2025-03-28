@@ -6,7 +6,18 @@ const UserSchema = new mongoose.Schema({
   address: String,
   areaCode: String,
   email: { type: String, unique: true },
-  password: String,
+  password: {String,required:true},
+  rentalHistory:[
+    {
+      rental:{type:mongoose.Schema.Types.ObjectId,ref:"Rental"},
+      rentedAt:{type:Date,default:Date.now},
+      dueDate:{type:Date},
+    },
+  ],
+
+  
 });
 
-module.exports = mongoose.model("User", UserSchema);
+
+const User = mongoose.model("User", UserSchema);
+module.exports = User;

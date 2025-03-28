@@ -26,6 +26,11 @@ export default function Navbar({ authToken, setAuthToken, userDetails, setUserDe
     navigate("/login");
   };
 
+  const handleRentalHistory = () => {
+    setShowDropdown(false); // Close dropdown on click
+    navigate("/rental-history"); // Redirect to rental history page
+  };
+
   return (
     <nav className="navbar navbar-expand-lg custom-navbar">
       <div className="container-fluid">
@@ -67,7 +72,13 @@ export default function Navbar({ authToken, setAuthToken, userDetails, setUserDe
                     <li><span className="dropdown-item"><strong>Phone:</strong> {userDetails.phone}</span></li>
                     <li><span className="dropdown-item"><strong>Address:</strong> {userDetails.address}</span></li>
                     <li><hr className="dropdown-divider" /></li>
-                    <li><button className="dropdown-item text-danger" onClick={handleLogout}>Logout</button></li>
+                    <li>
+                      <button className="dropdown-item" onClick={handleRentalHistory}>
+                        📜 Rental History
+                      </button>
+                    </li>
+                    <li><hr className="dropdown-divider" /></li>
+                    <li><button className="dropdown-item text-danger" onClick={handleLogout}>🚪 Logout</button></li>
                   </ul>
                 )}
               </div>
