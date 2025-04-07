@@ -9,7 +9,9 @@ import ContactUs from "./Pages/contactUs";
 import Rentals from "./Pages/rentals";
 import UserProfile from "./components/UserProfile";
 import RentalHistory from "./Pages/RentalHistory";
-
+import CheckoutPage from "./Pages/CheckoutPage";
+import SuccessPage from "./Pages/SuccessPage";
+import CancelPage from "./Pages/CancelPage";
 function App() {
   // ✅ Retrieve token from localStorage on load
   const [authToken, setAuthToken] = useState(localStorage.getItem("authToken") || null);
@@ -90,6 +92,10 @@ function App() {
         <Route path="/rentals" element={<Rentals />} />
         <Route path="/rental-history" element={<RentalHistory />} />
         <Route path="/profile" element={<UserProfile authToken={authToken} />} />
+        <Route path="/rentals/checkout/:rentalId" element={<CheckoutPage />} />
+        <Route path="/success" element={<SuccessPage />} />
+        <Route path="/cancel" element={<CancelPage />} />
+
       </Routes>
     </Router>
   );

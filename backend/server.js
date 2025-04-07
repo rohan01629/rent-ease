@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const connectDB = require("./db");
 const authRoutes = require("./routes/auth");
 const rentalRoutes = require("./routes/rentals");
+const paymentRoutes = require("./routes/payment");
 
 dotenv.config();
 connectDB();
@@ -12,6 +13,7 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: "50mb" })); // ✅ Increased payload limit
 app.use(express.urlencoded({ limit: "50mb", extended: true })); // ✅ Handle large form submissions
+app.use("/api/payments", paymentRoutes);
 
 app.use("/api/auth", authRoutes);
 app.use("/api/rentals", rentalRoutes);

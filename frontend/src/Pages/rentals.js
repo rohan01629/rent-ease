@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { FaShoppingCart, FaPlus, FaTrash } from "react-icons/fa";
 import "../styles/rentals.css";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Rentals() {
   const [items, setItems] = useState([]);
@@ -19,6 +21,8 @@ export default function Rentals() {
   useEffect(() => {
     fetchRentals();
   }, []);
+  const navigate = useNavigate();
+
 
   // Fetch rental items from the database
   const fetchRentals = async () => {
@@ -171,6 +175,7 @@ export default function Rentals() {
       }
     }
   };
+ 
   
   return (
     <div className="container mt-4">
@@ -214,7 +219,7 @@ export default function Rentals() {
               <img src={item.img} className="card-img-top rounded-top-4" alt={item.name} />
               <div className="card-body text-center">
                 <h5 className="card-title fw-bold">{item.name}</h5>
-                <button className="btn btn-success w-100 my-1" onClick={() => addToCart(index)}>Rent Now</button>
+                <button className="btn btn-success w-100 my-1" onClick={() => navigate(`Checkout/${item._id}`)}>Rent Now</button>
                 <button className="btn btn-danger w-100 mt-1" onClick={() => deletePost(item._id)}><FaTrash /> Delete</button>
               </div>
             </div>
