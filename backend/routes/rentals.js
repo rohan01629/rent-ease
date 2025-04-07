@@ -72,6 +72,7 @@ router.post("/", authMiddleware, upload.single("img"), async (req, res) => {
       price,
       location,
       img: imgPath,
+      postedBy: req.user.id,
     });
 
     await newRental.save();
@@ -88,6 +89,10 @@ router.delete("/:id", authMiddleware, async (req, res) => {
     const rental = await Rental.findById(req.params.id);
     if (!rental) {
       return res.status(404).json({ error: "Rental not found" });
+    }
+      if (rental.postedBy.toString() !== req.user.id) {
+        return res.status(403).json({ error: "Not authorized to delete this post" });
+      
     }
 
     // ✅ Delete the image file
