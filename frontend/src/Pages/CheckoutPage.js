@@ -56,6 +56,20 @@ export default function CheckoutPage() {
 
   const handleStripePayment = async (amount) => {
     const stripe = await stripePromise;
+     // ✅ Save rental info to localStorage before redirecting
+  const startDate = new Date();
+  const endDate = new Date();
+  const durationMultiplier = duration === "day" ? 1 : duration === "month" ? 30 : 365;
+  endDate.setDate(startDate.getDate() + durationMultiplier * quantity);
+
+  const rentalInfo = {
+    propertyTitle: rental.name,
+    rentAmount: amount,
+    startDate: startDate.toISOString(),
+    endDate: endDate.toISOString(),
+  };
+
+  localStorage.setItem("rentalInfo", JSON.stringify(rentalInfo));
     const response = await fetch("http://localhost:5000/api/payments/create-checkout-session", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

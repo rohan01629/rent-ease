@@ -4,6 +4,7 @@ const path = require("path");
 const fs = require("fs");
 const Rental = require("../models/Rental");
 const authMiddleware = require("../middleware/authMiddleware");
+const User = require("../models/User"); // ✅ Add this line
 
 const router = express.Router();
 
@@ -110,30 +111,40 @@ router.delete("/:id", authMiddleware, async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
-//Rent an item
-router.post("/:rentalId/rent",authMiddleware,async(req,res)=>{
-  try{
-    const {rentalId} = req.params;
-    const userId = req.user.id;//get user id from token
+
+
+// 📌 Rent an item
+router.post("/:rentalId/rent", authMiddleware, async (req, res) => {
+  try {
+    const { rentalId } = req.params;
+    const userId = req.user.id; // Get user ID from token
 
     const rental = await Rental.findById(rentalId);
-    if(!rental) return res.status(400).json({error:"Rental not found"});
+    if (!rental) return res.status(400).json({ error: "Rental not found" });
 
-    //check if already rented
-    if(rental.rentedBy) return res.status(400).json({error:"Item already rented"});
+    // 🚫 Check if already rented
+    if (rental.rentedBy) return res.status(400).json({ error: "Item already rented" });
 
-    //update rental record
+    // ✅ Mark as rented
     rental.rentedBy = userId;
     await rental.save();
 
-    //add to user's rental history
-    await User.findByIdAndUpdate(userId,{
-      $push:{rentalHistory:{rental:rentalId,rentedAt:new Date()}},
+    // ✅ Add to user's rental history with dueDate
+    await User.findByIdAndUpdate(userId, {
+      $push: {
+        rentalHistory: {
+          rental: rentalId,
+          rentedAt: new Date(),
+          dueDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days later
+        },
+      },
     });
-    res.json({message:"Rental successful",rental});
-  }catch(error){
-    console.error("Error renting item:",error);
-    res.status(500).json({error:"Server error"});
+
+    res.json({ message: "Rental successful", rental });
+  } catch (error) {
+    console.error("Error renting item:", error);
+    res.status(500).json({ error: "Server error" });
   }
-})
+});
+
 module.exports = router;

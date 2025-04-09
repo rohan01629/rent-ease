@@ -3,6 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const connectDB = require("./db");
 const authRoutes = require("./routes/auth");
+const userRoutes = require("./routes/users");
 const rentalRoutes = require("./routes/rentals");
 const paymentRoutes = require("./routes/payment");
 
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ limit: "50mb", extended: true })); // ✅ Handle la
 app.use("/api/payments", paymentRoutes);
 
 app.use("/api/auth", authRoutes);
+app.use("/api/users", userRoutes);
 app.use("/api/rentals", rentalRoutes);
 
 const PORT = process.env.PORT || 5000;
